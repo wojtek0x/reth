@@ -731,6 +731,22 @@ visibility = "0.1.1"
 walkdir = "2.3.3"
 vergen-git2 = "1.0.5"
 
+[patch.crates-io]
+# Patch revm dependencies to use custom builds from /home/ec2-user/revm
+revm = { path = "/home/ec2-user/revm/crates/revm" }
+revm-bytecode = { path = "/home/ec2-user/revm/crates/bytecode" }
+revm-database = { path = "/home/ec2-user/revm/crates/database" }
+revm-state = { path = "/home/ec2-user/revm/crates/state" }
+revm-primitives = { path = "/home/ec2-user/revm/crates/primitives" }
+revm-interpreter = { path = "/home/ec2-user/revm/crates/interpreter" }
+revm-inspector = { path = "/home/ec2-user/revm/crates/inspector" }
+revm-context = { path = "/home/ec2-user/revm/crates/context" }
+revm-context-interface = { path = "/home/ec2-user/revm/crates/context/interface" }
+revm-database-interface = { path = "/home/ec2-user/revm/crates/database/interface" }
+revm-handler = { path = "/home/ec2-user/revm/crates/handler" }
+revm-precompile = { path = "/home/ec2-user/revm/crates/precompile" }
+op-revm = { path = "/home/ec2-user/revm/crates/op-revm" }
+
 # [patch.crates-io]
 # alloy-consensus = { git = "https://github.com/alloy-rs/alloy", rev = "3049f232fbb44d1909883e154eb38ec5962f53a3" }
 # alloy-contract = { git = "https://github.com/alloy-rs/alloy", rev = "3049f232fbb44d1909883e154eb38ec5962f53a3" }
