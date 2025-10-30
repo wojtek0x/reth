@@ -1,0 +1,13 @@
+--- a/crates/evm/src/traits.rs
++++ b/crates/evm/src/traits.rs
+@@ -113,9 +113,9 @@ impl<T> EvmInternalsTr for EvmInternalsImpl<T>
+     fn load_account(
+         &mut self,
+         address: Address,
+-    ) -> Result<StateLoad<&mut Account>, EvmInternalsError> {
+-        self.0.load_account(address).map_err(EvmInternalsError::database)
++    ) -> Result<StateLoad<&mut Account>, EvmInternalsError> {
++        self.0.load_account_mut(address).map(|sl| StateLoad::new(&mut *sl.data, sl.is_cold)).map_err(EvmInternalsError::database)
+     }
+ 
+     fn load_account_code(
